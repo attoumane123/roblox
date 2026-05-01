@@ -3,89 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Univers Roblox</title>
+    <title>Connexion - Roblox Project</title>
     <style>
-        /* Design du site */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #DEE1E3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
         }
 
-        header {
-            background-color: #000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background: #222;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+        .login-box {
             background: white;
+            padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .btn-roblox {
-            display: inline-block;
-            background-color: #0074e4;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
-        }
-
-        footer {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 380px;
             text-align: center;
-            padding: 20px;
-            font-size: 0.8em;
-            color: #777;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #393B3D;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #B8B8B8;
+            border-radius: 4px;
+            background-color: #F2F2F2;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #0074E4;
+            outline: none;
+            background-color: #fff;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background-color: #0074E4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .btn-login:hover {
+            background-color: #0056A3;
+        }
+
+        .links {
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        a {
+            color: #0074E4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #d32f2f; /* Rouge erreur */
+            display: none;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Bienvenue sur mon site Roblox</h1>
-</header>
-
-<nav>
-    <a href="#">Accueil</a>
-    <a href="#">Mes Jeux</a>
-    <a href="#">Contact</a>
-</nav>
-
-<div class="container">
-    <h2>Salut ! C'est attoumane123</h2>
-    <p>Ceci est mon premier site web hébergé sur GitHub Pages. Je vais l'utiliser pour partager mes créations et mes expériences sur Roblox.</p>
+<div class="login-box">
+    <h1>Connexion à Roblox</h1>
     
-    <h3>Projet actuel</h3>
-    <p>Je travaille actuellement sur un nouveau projet passionnant. Reste à l'écoute pour plus de mises à jour !</p>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Nom d'utilisateur" required>
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        
+        <button type="submit" class="btn-login">Connexion</button>
+    </form>
 
-    <a href="https://www.roblox.com" class="btn-roblox" target="_blank">Aller sur Roblox</a>
+    <div id="message">Identifiants incorrects. Veuillez réessayer.</div>
+
+    <div class="links">
+        <a href="#">Mot de passe oublié ?</a>
+    </div>
 </div>
 
-<footer>
-    <p>Créé par attoumane123 &copy; 2026</p>
-</footer>
+<script>
+    // Ce petit script gère l'interaction
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche la page de se recharger
+        
+        const msg = document.getElementById('message');
+        msg.style.display = 'block'; // Affiche un message d'erreur simulé
+        
+        console.log("Tentative de connexion détectée");
+    });
+</script>
 
 </body>
 </html>
